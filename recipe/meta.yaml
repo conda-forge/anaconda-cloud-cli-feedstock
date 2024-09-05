@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -23,9 +23,9 @@ requirements:
     - pip
   run:
     - python >=3.8
-    - anaconda-cli-base >=0.2
-    - anaconda-cloud-auth >=0.3
-    - anaconda-client >=1.12.2
+    - anaconda-cli-base >=0.2,<0.3
+    - anaconda-cloud-auth >=0.3,<0.6
+    - anaconda-client >=1.12.2,<1.13
 
 test:
   imports:
