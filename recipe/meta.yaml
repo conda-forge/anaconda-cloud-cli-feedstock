@@ -1,5 +1,5 @@
 {% set name = "anaconda-cloud-cli" %}
-{% set version = "0.2.0" %}
+{% set version = "0.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/anaconda_cloud_cli-{{ version }}.tar.gz
-  sha256: 62f897a83641340599c908874b0a31903ff79881d693ddbaade2905f526ac231
+  sha256: f6375e3e93e51afa410cc7a363259ad7ca6fc1a5adeda056daaf73d34e3a1060
 
 build:
   noarch: python
