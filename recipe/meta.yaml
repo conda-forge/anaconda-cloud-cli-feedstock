@@ -6,25 +6,27 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/anaconda_cloud_cli-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/anaconda_cloud_cli-{{ version }}.tar.gz
   sha256: b72b3008ea3b57f11dbe5535db9c016f594ac378fb15dea3b52874ad279fcd62
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - hatchling
     - hatch-vcs >=0.3
     - setuptools-scm >=7.1
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
 
 test:
+  requires:
+    - python {{ python_min }}
   commands:
     - python -c "from importlib.util import find_spec; assert not bool(find_spec(\"anaconda_cloud_cli\"))"
 
